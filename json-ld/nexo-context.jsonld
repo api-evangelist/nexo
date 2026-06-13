@@ -1,0 +1,77 @@
+{
+  "@context": {
+    "@vocab": "https://schema.org/",
+    "nexo": "https://nexo.com/",
+    "pro": "https://pro.nexo.com/",
+    "pg": "https://pg.nexo.com/",
+    "aid": "https://api-evangelist.com/schema/",
+    "name": "schema:name",
+    "description": "schema:description",
+    "url": "schema:url",
+    "logo": "schema:logo",
+    "sameAs": "schema:sameAs",
+    "provider": "schema:provider",
+    "offers": "schema:offers",
+    "WebAPI": "schema:WebAPI",
+    "documentation": "schema:documentation",
+    "termsOfService": "schema:termsOfService",
+    "apiEndpoint": "pro:apiEndpoint",
+    "authMethod": "aid:authMethod",
+    "rateLimit": "aid:rateLimit",
+    "webhook": "aid:webhook",
+    "depositAddress": "pg:depositAddress",
+    "referenceId": "pg:referenceId",
+    "asset": "pg:asset",
+    "blockchain": "pg:blockchain",
+    "eventType": "pg:eventType"
+  },
+  "@type": "WebAPI",
+  "@id": "https://nexo.com",
+  "name": "Nexo API",
+  "description": "Nexo is a crypto-backed lending and earning platform offering REST APIs for advanced trading (Nexo Pro), payment processing (Payment Gateway), and portfolio management. Supports HMAC-SHA256 authentication, WebSocket streams, and webhook-based deposit notifications.",
+  "url": "https://nexo.com",
+  "logo": "https://nexo.com/favicon.ico",
+  "provider": {
+    "@type": "Organization",
+    "name": "Nexo",
+    "url": "https://nexo.com",
+    "sameAs": [
+      "https://github.com/nexofinance",
+      "https://x.com/Nexo",
+      "https://ky.linkedin.com/company/nexofinance"
+    ]
+  },
+  "documentation": [
+    {
+      "@type": "WebAPI",
+      "name": "Nexo Pro Trading API",
+      "url": "https://pro.nexo.com/apiDocPro.html",
+      "description": "REST and WebSocket API for advanced crypto trading on Nexo Pro. Supports spot trading, futures, TWAP orders, account balances, order placement, order cancellation, trade history, and futures position management.",
+      "authMethod": "HMAC-SHA256 API key/secret",
+      "apiEndpoint": "https://pro.nexo.com/api/v1"
+    },
+    {
+      "@type": "WebAPI",
+      "name": "Nexo Payment Gateway API",
+      "url": "https://pg.nexo.com",
+      "description": "REST API enabling merchants to accept cryptocurrency payments. Supports listing available assets, creating deposit addresses, and receiving webhook notifications for crypto deposits.",
+      "authMethod": "API Key (x-api-key header)",
+      "apiEndpoint": "https://pg.nexo.com/api/v1",
+      "webhook": {
+        "eventType": "PG_DEPOSIT",
+        "signatureHeader": "X-SIGNATURE",
+        "signatureAlgorithm": "SHA256"
+      }
+    }
+  ],
+  "offers": {
+    "@type": "Offer",
+    "url": "https://nexo.com/pricing"
+  },
+  "sameAs": [
+    "https://pro.nexo.com/apiDocPro.html",
+    "https://pg.nexo.com",
+    "https://status.nexo.com",
+    "https://nexo.com/blog"
+  ]
+}
