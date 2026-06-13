@@ -1,0 +1,89 @@
+aid: nexo
+name: Nexo
+description: >-
+  Nexo is a crypto-backed lending and earning platform offering a REST API for
+  managing crypto credit lines, earning interest on digital assets, swapping
+  assets, and portfolio management. The Nexo Pro API provides programmatic
+  access to advanced trading (spot, futures, TWAP), account balances, order
+  management, and trade history via REST and WebSocket interfaces. A separate
+  Payment Gateway API enables merchants to accept crypto payments with
+  webhook-based deposit notifications.
+type: Index
+image: https://kinlane-productions.s3.amazonaws.com/apis-json/apis-json-logo.jpg
+url: https://raw.githubusercontent.com/api-evangelist/nexo/refs/heads/main/apis.yml
+created: '2026-06-13'
+modified: '2026-06-13'
+specificationVersion: '0.19'
+tags:
+  - Crypto
+  - Lending
+  - Earning
+  - Trading
+  - Payments
+  - Digital Assets
+  - DeFi
+apis:
+  - name: Nexo Pro Trading API
+    description: >-
+      REST and WebSocket API for advanced crypto trading on Nexo Pro. Supports
+      spot trading, futures, TWAP orders, account balances, order placement,
+      order cancellation, trade history, and futures position management.
+      Authentication uses HMAC-SHA256 signatures with API key and secret pairs.
+    image: https://kinlane-productions.s3.amazonaws.com/apis-json/apis-json-logo.jpg
+    humanURL: https://pro.nexo.com/apiDocPro.html
+    baseURL: https://pro.nexo.com/api/v1
+    tags:
+      - Crypto Trading
+      - Spot
+      - Futures
+      - Orders
+      - Portfolio
+    properties:
+      - type: Documentation
+        url: https://pro.nexo.com/apiDocPro.html
+      - type: OpenAPI
+        url: https://pro.nexo.com/apiDocPro.html
+  - name: Nexo Payment Gateway API
+    description: >-
+      REST API enabling merchants to accept cryptocurrency payments. Supports
+      listing available assets, creating deposit addresses per transaction
+      reference, and receiving webhook notifications (PG_DEPOSIT events) for
+      incoming crypto deposits across Bitcoin, Ethereum, Polygon, and BNB Smart
+      Chain networks.
+    image: https://kinlane-productions.s3.amazonaws.com/apis-json/apis-json-logo.jpg
+    humanURL: https://pg.nexo.com
+    baseURL: https://pg.nexo.com/api/v1
+    tags:
+      - Payments
+      - Crypto Payments
+      - Merchants
+      - Webhooks
+    properties:
+      - type: Documentation
+        url: https://pg.nexo.com
+common:
+  - type: Website
+    url: https://nexo.com
+  - type: Documentation
+    url: https://pro.nexo.com/apiDocPro.html
+  - type: GitHubOrg
+    url: https://github.com/nexofinance
+  - type: LinkedIn
+    url: https://ky.linkedin.com/company/nexofinance
+  - type: Blog
+    url: https://nexo.com/blog
+  - type: Pricing
+    url: https://nexo.com/pricing
+  - type: StatusPage
+    url: https://status.nexo.com
+  - type: X
+    url: https://x.com/Nexo
+  - type: Plans
+    url: plans/nexo-plans-pricing.yml
+  - type: RateLimits
+    url: rate-limits/nexo-rate-limits.yml
+  - type: FinOps
+    url: finops/nexo-finops.yml
+maintainers:
+  - FN: Kin Lane
+    email: kin@apievangelist.com

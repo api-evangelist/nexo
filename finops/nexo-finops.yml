@@ -1,0 +1,123 @@
+name: Nexo FinOps Framework
+description: >-
+  FinOps Framework FOCUS-aligned cost and financial operations reference for
+  Nexo API integrations. Covers cost drivers for the Nexo Pro Trading API and
+  Nexo Payment Gateway API, including trading fees, borrow costs, earn revenue,
+  and merchant payment processing costs.
+specificationVersion: '1.0'
+schema: FOCUS
+currency: USD
+services:
+  - name: Nexo Pro Trading API
+    description: >-
+      API costs for trading operations on Nexo Pro. Trading fees vary by loyalty
+      tier (Base, Silver, Gold, Platinum) with Platinum tier offering 0.5%
+      rebates. Fee rebates reduce effective transaction costs for active traders.
+    costDrivers:
+      - name: Spot Trading Fees
+        description: >-
+          Fees charged per spot trade executed via the API. Maker and taker fees
+          apply to spot market orders. Exact fee schedules vary by tier and
+          trading volume.
+        unit: per-trade
+        billingModel: usage-based
+        tierDiscount: true
+        notes: >-
+          Platinum tier users receive the highest trading fee rebates (0.5%).
+          Lower tiers receive proportionally smaller rebates.
+      - name: Futures Trading Fees
+        description: >-
+          Fees charged for futures contract trades placed via API endpoints.
+          Applied to each futures order executed.
+        unit: per-trade
+        billingModel: usage-based
+      - name: API Key Management
+        description: >-
+          No cost for creating API keys. Each user may create up to 5 API keys
+          at no charge. API access itself does not carry a direct subscription
+          fee.
+        unit: flat
+        price: 0
+        currency: USD
+  - name: Nexo Credit Lines (Borrow)
+    description: >-
+      Interest costs for crypto-backed credit lines accessed programmatically or
+      via the platform. Interest rates range from 2.9% to 18.9% APR depending
+      on loyalty tier and portfolio size.
+    costDrivers:
+      - name: Crypto Credit Line Interest
+        description: >-
+          Annual percentage rate (APR) charged on outstanding loan balances
+          backed by crypto collateral.
+        unit: annual-percentage-rate
+        billingModel: interest-based
+        tiers:
+          - tier: Base
+            rateMin: 13.9%
+            rateMax: 18.9%
+            condition: Less than 1% portfolio in NEXO tokens
+          - tier: Silver
+            condition: At least 1% portfolio in NEXO tokens
+          - tier: Gold
+            condition: At least 5% portfolio in NEXO tokens
+          - tier: Platinum
+            rateMin: 2.9%
+            condition: At least 10% portfolio in NEXO tokens
+  - name: Nexo Earn (Interest Revenue)
+    description: >-
+      Revenue generated from interest-bearing crypto asset products. These
+      represent income to the API consumer, not a cost. Rates vary by asset
+      type, term (flexible vs. fixed), and loyalty tier.
+    costDrivers:
+      - name: Flexible Earn
+        description: >-
+          Variable-rate earn product on crypto assets with no lock-up period.
+          Rates are lower than fixed-term products.
+        unit: annual-percentage-yield
+        billingModel: yield-based
+        direction: revenue
+      - name: Fixed-Term Earn
+        description: >-
+          Higher-rate earn product with a defined lock-up period. Offers the
+          highest APY rates on the platform (up to 14% on USDC, 7% on BTC,
+          8% on ETH at Platinum tier).
+        unit: annual-percentage-yield
+        billingModel: yield-based
+        direction: revenue
+  - name: Nexo Payment Gateway API
+    description: >-
+      Cost model for merchants using the Nexo Payment Gateway to accept crypto
+      payments. Nexo advertises flexible, transparent fee structures with no
+      publicly listed fixed rates. Merchants receive funds that can be withdrawn
+      to wallets or converted to fiat (USD, EUR, GBP).
+    costDrivers:
+      - name: Merchant Transaction Fees
+        description: >-
+          Per-transaction fees charged on incoming crypto deposits processed
+          through the payment gateway. Specific rates are not publicly listed
+          and require merchant onboarding agreement.
+        unit: per-transaction
+        billingModel: usage-based
+        notes: >-
+          Fee structure is described as "flexible and transparent." Contact Nexo
+          merchant services for specific rate schedules. No sandbox environment
+          is available; all testing occurs in production.
+      - name: Fiat Conversion Fees
+        description: >-
+          Fees associated with converting received crypto to fiat currencies
+          (USD, EUR, GBP) for merchant withdrawals.
+        unit: per-conversion
+        billingModel: usage-based
+optimization:
+  - recommendation: Use Platinum loyalty tier to minimize borrow APR and maximize trading fee rebates
+    impact: high
+    effort: medium
+  - recommendation: Elect to receive Earn interest in NEXO tokens for higher yield rates
+    impact: medium
+    effort: low
+  - recommendation: Consolidate API keys to stay within the 5-key limit and manage rate limits efficiently
+    impact: low
+    effort: low
+  - recommendation: Prefer fixed-term Earn products for higher APY when liquidity needs are predictable
+    impact: medium
+    effort: low

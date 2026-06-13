@@ -1,0 +1,71 @@
+name: Nexo Plans and Pricing
+description: >-
+  Nexo uses a loyalty tier system based on the percentage of a user's portfolio
+  held in NEXO tokens. Tiers determine earn rates on crypto assets, borrow rates
+  for credit lines, trading fee rebates, cashback on the Nexo Card, and free
+  crypto withdrawals. The Payment Gateway is available to businesses separately
+  with flexible, transparent fee structures.
+specificationVersion: '0.1'
+plans:
+  - name: Base Tier
+    description: >-
+      Entry-level tier for users holding less than 1% of their portfolio in NEXO
+      tokens. Provides access to all core platform features including crypto
+      credit lines, earn products, and trading.
+    url: https://nexo.com/pricing
+    price: Free
+    pricingModel: loyalty-based
+    features:
+      - Earn interest on crypto assets (base rates)
+      - Borrow against crypto collateral (up to 18.9% APR)
+      - Access to Nexo Pro trading platform
+      - Nexo Card with 0.5% crypto cashback
+      - Access to swap and exchange features
+      - Payment Gateway API access (merchants)
+  - name: Silver Tier
+    description: >-
+      Activated when at least 1% of a user's portfolio is held in NEXO tokens.
+      Provides improved earn rates, lower borrow rates, and enhanced benefits.
+    url: https://nexo.com/pricing
+    price: Free
+    pricingModel: loyalty-based
+    minimumNexoTokenRatio: 1%
+    features:
+      - Higher earn rates on crypto assets
+      - Lower borrow rates (reduced APR)
+      - Improved trading fee rebates
+      - Enhanced Nexo Card cashback
+      - Priority customer support
+  - name: Gold Tier
+    description: >-
+      Activated when at least 5% of a user's portfolio is held in NEXO tokens.
+      Provides significantly improved rates and additional platform benefits.
+    url: https://nexo.com/pricing
+    price: Free
+    pricingModel: loyalty-based
+    minimumNexoTokenRatio: 5%
+    features:
+      - Higher earn rates on crypto assets
+      - Lower borrow rates
+      - Increased trading fee rebates (up to 0.3%)
+      - Higher crypto cashback on Nexo Card
+      - Additional free crypto withdrawals per month
+  - name: Platinum Tier
+    description: >-
+      Top loyalty tier requiring at least 10% of portfolio in NEXO tokens.
+      Provides the best rates available on the platform including up to 15% APY
+      on stablecoins and borrow rates as low as 2.9% APR.
+    url: https://nexo.com/pricing
+    price: Free
+    pricingModel: loyalty-based
+    minimumNexoTokenRatio: 10%
+    features:
+      - Up to 14% APY on USDC and stablecoins
+      - Up to 7% APY on BTC
+      - Up to 8% APY on ETH
+      - Borrow rates as low as 2.9% APR
+      - 0.5% trading fee rebates
+      - 2% cashback on Nexo Card purchases
+      - 1 free crypto withdrawal per month
+      - Real-time analytics and on-chain signals via Nexo Pro
+      - Exclusive access to premium features

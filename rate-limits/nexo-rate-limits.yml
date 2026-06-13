@@ -1,0 +1,48 @@
+name: Nexo API Rate Limits
+description: >-
+  Rate limits for the Nexo Pro Trading REST API and Nexo Payment Gateway API.
+  Nexo Pro enforces per-API-key rate limits to protect services against abuse
+  and attacks. The Payment Gateway API has no publicly documented rate limits
+  but requires HTTPS and proper API key authentication.
+specificationVersion: '0.1'
+rateLimits:
+  - name: Nexo Pro REST API Rate Limit
+    description: >-
+      Each API key on the Nexo Pro REST API has a default rate limit of 10
+      requests per second. This limit applies to all REST endpoints including
+      account summary, pairs, orders, trade history, and futures.
+    api: Nexo Pro Trading API
+    scope: per-api-key
+    limit: 10
+    period: second
+    periodUnit: second
+    enforcement: request-based
+    headers:
+      - name: X-API-KEY
+        description: API key used to identify and rate-limit the caller
+    notes: >-
+      Each user can create up to 5 API keys on the Nexo Pro platform. Rate
+      limits are applied per individual API key. Exceeding the rate limit
+      returns an error response.
+  - name: Nexo Pro WebSocket Rate Limit
+    description: >-
+      WebSocket connections to Nexo Pro are available for real-time market data
+      and order updates. Specific per-connection rate limits are not publicly
+      documented.
+    api: Nexo Pro Trading API
+    scope: per-connection
+    notes: >-
+      WebSocket API is available for real-time data streams. Consult official
+      documentation for detailed WebSocket rate limiting policies.
+  - name: Nexo Payment Gateway Rate Limit
+    description: >-
+      The Nexo Payment Gateway API does not publicly document specific rate
+      limits. All requests require API key authentication via x-api-key header
+      and must use HTTPS. Webhook delivery expects HTTP 200-299 response within
+      10 seconds.
+    api: Nexo Payment Gateway API
+    scope: per-api-key
+    notes: >-
+      Webhook endpoint must respond within 10 seconds with a 200-299 HTTP status
+      code. No sandbox environment is available; testing occurs in production.
+      Contact Nexo merchant support for specific rate limit policies.
