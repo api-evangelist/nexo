@@ -2,5 +2,16 @@
   "url": "https://nexo.com/blog",
   "rss": null,
   "note": "No RSS/Atom feed detected at standard paths (feed.xml, rss.xml, atom.xml). Blog content is rendered via JavaScript SPA. Subscribe via on-site form.",
-  "fetched": "2026-06-13"
+  "fetched": "2026-06-14T20:42:17Z",
+  "repo": "nexo",
+  "feeds": [
+    {
+      "source": "https://ky.linkedin.com/company/nexofinance",
+      "feed_url": "https://ky.linkedin.com/company/nexofinance",
+      "title": "",
+      "saved": 0,
+      "method": "none"
+    }
+  ],
+  "post_count": 0
 }
