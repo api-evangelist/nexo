@@ -9,7 +9,7 @@ description: >-
   Payment Gateway API enables merchants to accept crypto payments with
   webhook-based deposit notifications.
 type: Index
-image: https://kinlane-productions.s3.amazonaws.com/apis-json/apis-json-logo.jpg
+image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/apis-json-logo.jpg
 url: https://raw.githubusercontent.com/api-evangelist/nexo/refs/heads/main/apis.yml
 created: '2026-06-13'
 modified: '2026-06-13'
@@ -29,7 +29,7 @@ apis:
       spot trading, futures, TWAP orders, account balances, order placement,
       order cancellation, trade history, and futures position management.
       Authentication uses HMAC-SHA256 signatures with API key and secret pairs.
-    image: https://kinlane-productions.s3.amazonaws.com/apis-json/apis-json-logo.jpg
+    image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/apis-json-logo.jpg
     humanURL: https://pro.nexo.com/apiDocPro.html
     baseURL: https://pro.nexo.com/api/v1
     tags:
@@ -50,7 +50,7 @@ apis:
       reference, and receiving webhook notifications (PG_DEPOSIT events) for
       incoming crypto deposits across Bitcoin, Ethereum, Polygon, and BNB Smart
       Chain networks.
-    image: https://kinlane-productions.s3.amazonaws.com/apis-json/apis-json-logo.jpg
+    image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/apis-json-logo.jpg
     humanURL: https://pg.nexo.com
     baseURL: https://pg.nexo.com/api/v1
     tags:
