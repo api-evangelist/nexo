@@ -5,7 +5,7 @@
       "source": "https://nexo.com/blog/feed/",
       "feed_url": "https://nexo.com/blog/feed/",
       "title": "",
-      "saved": 0,
+      "saved": 1,
       "method": "feed"
     },
     {
@@ -16,6 +16,6 @@
       "method": "none"
     }
   ],
-  "fetched": "2026-08-01T15:49:00Z",
-  "post_count": 48
+  "fetched": "2026-08-06T14:08:46Z",
+  "post_count": 52
 }
