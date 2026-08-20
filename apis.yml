@@ -48,6 +48,12 @@ apis:
       - Crypto Trading
       - Spot
       - Futures
+      - Order
+      - Portfolio
+    tags_raw:
+      - Crypto Trading
+      - Spot
+      - Futures
       - Orders
       - Portfolio
     properties:
@@ -66,6 +72,11 @@ apis:
     humanURL: https://pg.nexo.com
     baseURL: https://pg.nexo.com/api/v1
     tags:
+      - Payments
+      - Crypto Payments
+      - Merchants
+      - Webhook
+    tags_raw:
       - Payments
       - Crypto Payments
       - Merchants
